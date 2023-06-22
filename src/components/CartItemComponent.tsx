@@ -8,6 +8,7 @@ import {
   removeItemFromCart,
 } from "../redux/slice/cartSlice";
 import CountButton from "./CountButton";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 interface CartItemComponentProps {
   itemData: CartItem;
@@ -34,11 +35,7 @@ function CartItemComponent({ itemData }: CartItemComponentProps) {
   return (
     <div className="w-full flex flex-col sm:flex-row justify-between items-center  border-b border-gray-500 py-4">
       <div className="w-[300px]">
-        <img
-          className="w-full h-[250px] object-cover rounded-t-lg"
-          src={food.image}
-          alt={food.name}
-        />
+        <LazyLoadImage src={food.image} alt={food.name} height={"h-[250px]"} />
         <div className="flex justify-between px-2 py-4">
           <p className="font-bold">{food.name}</p>
           <p>

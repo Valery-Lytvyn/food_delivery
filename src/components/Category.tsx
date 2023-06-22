@@ -1,5 +1,6 @@
 import HeadLine from "./HeadLine";
 import { categories } from "../constants/foodData";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Category() {
   return (
@@ -12,7 +13,9 @@ function Category() {
             className="bg-gray-100 rounded-lg p-4 flex justify-between items-center hover:scale-105 hover:duration-500"
           >
             <h2 className="font-bold sm:text-xl">{name}</h2>
-            <img src={image} alt={name} className="w-20" />
+            <div className="w-20">
+              <LazyLoadImage src={image} alt={name} height={"h-[20px]"} />
+            </div>
           </div>
         ))}
       </div>

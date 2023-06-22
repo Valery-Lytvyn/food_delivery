@@ -3,6 +3,7 @@ import { AiFillPlusCircle } from "react-icons/ai";
 import { FoodItemType } from "../constants/foodData";
 import { useDispatch } from "react-redux";
 import { incrementItemQuantity } from "../redux/slice/cartSlice";
+import LazyImage from "./LazyImage";
 
 interface FoodCardProps {
   foodCartData: FoodItemType;
@@ -26,16 +27,13 @@ function FoodCard({ foodCartData }: FoodCardProps) {
 
   return (
     <div
-      className="border shadow-lg rounded-lg hover:scale-105 hover:duration-500 relative"
+      className="shadow-lg rounded-lg hover:scale-105 hover:duration-500 relative"
       key={id}
       onMouseEnter={displayAdd}
       onMouseLeave={hideAdd}
     >
-      <img
-        className="w-full h-[200px] object-cover rounded-t-lg"
-        src={image}
-        alt={name}
-      />
+      <LazyImage src={image} alt={name} height={"h-[200px]"} />
+
       <div className="flex justify-between px-2 py-4">
         <p className="font-bold">{name}</p>
         <p>

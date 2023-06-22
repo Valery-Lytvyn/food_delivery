@@ -1,4 +1,5 @@
 import hero from "../assets/images/hero.webp";
+import LazyImage from "./LazyImage";
 
 function Hero() {
   return (
@@ -13,11 +14,7 @@ function Hero() {
             Foods<span className="text-orange-500 px-4">Delivered</span>
           </h1>
         </div>
-        <img
-          className="w-full max-h-[500px] object-cover"
-          src={hero}
-          alt="burger"
-        />
+        <LazyImage src={hero} alt={"burger"} height={"max-h-[500px]"} />
       </div>
     </div>
   );
