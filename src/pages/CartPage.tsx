@@ -13,10 +13,12 @@ function CartPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const sum = productsInCart.reduce(function (acc, obj) {
-      return acc + obj.total;
-    }, 0);
-    setPurchaseAmount(sum);
+    if (productsInCart && productsInCart.length > 0) {
+      const sum = productsInCart.reduce(function (acc, obj) {
+        return acc + obj.total;
+      }, 0);
+      setPurchaseAmount(sum);
+    }
   }, [productsInCart]);
 
   const removeAllItem = () => {
